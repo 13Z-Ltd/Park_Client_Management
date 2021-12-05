@@ -555,10 +555,12 @@ public class ActivationForm extends MainJFrameForm implements Runnable {
 		bunny.setVisible(true);
 		mainActivationPanel.add(bunny);
 
+		/*
 		JLabel train = new JLabel(new ImageIcon(getClass().getClassLoader().getResource("little_train.png")));
 		train.setBounds(1150, 618, 264, 80);
 		train.setVisible(true);
 		mainActivationPanel.add(train);
+		*/
 	}
 	
 	public void changeIconSize(JLabel source) {
