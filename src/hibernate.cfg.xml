@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>		
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/<!--Put your database name here!--></property>
+		<!-- <property name="hibernate.connection.url">jdbc:postgresql://127.0.0.1:5432/...</property> -->
+		
+		<property name="hibernate.connection.username"><!--Put your authorized user name here!--></property>
+		<property name="hibernate.connection.password"><!--Put your password here!--></property>
+
+		<!-- JDBC connection pool (use the build-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<!-- <property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property> -->
+
+		<!-- thread is the short name for org.hibernate.context.ThreadLocalSessionContext -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Set "true" to show SQL statements -->
+		<property name="hibernate.show_sql">true</property>
+
+		<!-- manage automatic database creation -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!--<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">create-drop</property>-->
+
+
+		<!-- Names the annotated entity class -->
+		<mapping class="model.entities.AppUser" />
+		<mapping class="model.entities.UserActivities" />
+		<mapping class="model.entities.RegisteredWristband" />
+		<mapping class="model.entities.ActiveWristband" />
+		<mapping class="model.entities.ClosedWristband" />
+		<mapping class="model.entities.SettingsData" />
+		<mapping class="model.entities.BadWeatherLog" />
+
+	</session-factory>
+</hibernate-configuration>
